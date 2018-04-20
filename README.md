@@ -21,7 +21,7 @@ You will need to create a Auth API application in the Duo console.
 
 This application is what you'll be sending push notifications on behalf of, so make sure to make the name something convincing :)
 
-The integration key should be put in your settings.config as the APP_IKEY, and the secret key should be APP_SKEY.
+The integration key should be put in your settings.config as the APP_IKEY, the secret key should be APP_SKEY, and the API hostname should be in HOST.
 
 ## Admin API
 
@@ -44,4 +44,8 @@ Arguments:
 ```
 
 # Reporting
-Because all push notifications are coming from a new Auth API application, you can go into the Duo console and generate reports on approved/denied pushes for that application.
+To speed up the sending of push notifications, DuoPusher uses async authentication requests.
+
+This means that the only way to gain insight into which users approved the requests from the authentication logs for the Auth API app.
+
+But, because all push notifications are coming from a new Auth API application, you can go into the Duo console and generate reports on approved/denied pushes for that application.
